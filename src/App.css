@@ -1,27 +1,3 @@
-:root {
-  --color-first: #EC7100;
-  --color-second: #a2ee4b;
-  --color-third: #321e60;
-  --color-fourth: #ac0000;
-
-  --color-white-first: #fff;
-  --color-white-second: #e4e4e4;
-  --color-white-third: #c5c5c5;
-
-  --color-black-first: #000;
-  --color-black-second: #1a1a1a;
-  --color-black-third: #414141;
-}
-
-
-.action {
-  color: var(--color-white-second);
-  text-decoration: none;
-  font-size: none;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
 .destaque {
   font-family: 'Bungee Spice', sans-serif;
   font-size: 2.5rem;

@@ -1,0 +1,7 @@
+.action {
+    text-decoration: none;
+    font-size: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-black-third);
+  }
