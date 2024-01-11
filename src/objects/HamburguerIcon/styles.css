@@ -1,0 +1,28 @@
+.hamburguer {
+    display: inline-block;
+    width: 25px;
+    height: 4px;
+    background-color: var(--color-white-second);
+    cursor: pointer;
+    box-shadow: 1px -1px var(--color-black-second);
+}
+
+.hamburguer::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: var(--color-white-second);
+    box-shadow: 1px -1px var(--color-black-second);
+    margin-top: 7px;
+}
+
+.hamburguer::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: var(--color-white-second);
+    box-shadow: 1px -1px var(--color-black-second);
+    margin-top: -18px;
+}
