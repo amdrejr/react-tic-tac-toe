@@ -4,7 +4,7 @@
     height: 4px;
     background-color: var(--color-white-second);
     cursor: pointer;
-    box-shadow: 1px -1px var(--color-black-second);
+    box-shadow: 1px 1px var(--color-black-second);
 }
 
 .hamburguer::before {
@@ -13,7 +13,7 @@
     width: 25px;
     height: 4px;
     background-color: var(--color-white-second);
-    box-shadow: 1px -1px var(--color-black-second);
+    box-shadow: 1px 1px var(--color-black-second);
     margin-top: 7px;
 }
 
@@ -23,6 +23,6 @@
     width: 25px;
     height: 4px;
     background-color: var(--color-white-second);
-    box-shadow: 1px -1px var(--color-black-second);
+    box-shadow: 1px 1px var(--color-black-second);
     margin-top: -18px;
 }

@@ -5,3 +5,8 @@
     margin: 0;
     padding: 0;    
 }
+
+*::selection {
+    background-color: var(--color-sixth);
+    color: var(--color-white-first);
+}

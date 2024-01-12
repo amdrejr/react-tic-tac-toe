@@ -7,5 +7,5 @@
     font-weight: bold;
     letter-spacing: 2px;
     color: var(--color-white-second);
-    text-shadow: 1px -1px 0 black;
+    text-shadow: var(--text-shadow-small);
   }
