@@ -1,8 +1,12 @@
 :root {
     --color-first: #EC7100;
     --color-second: #a2ee4b;
-    --color-third: #321e60;
-    --color-fourth: #ac0000;
+    --color-third: #800080;
+    --color-fourth: #8000ff;
+    --color-fifth: #ff0000;
+    --color-sixth: #ff0080;
+    --color-seventh: #0000ff;
+    --color-eighth: #000080;
   
     --color-white-first: #fff;
     --color-white-second: #e4e4e4;

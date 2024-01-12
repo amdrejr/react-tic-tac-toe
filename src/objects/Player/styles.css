@@ -1,4 +1,10 @@
 .player {
     border: none;
     background: transparent;
+    /* font-size: 0px; */
+    line-height: 0;
+    /* 
+        o tamanho do button pode ser afetado por propriedades de texto, mesmo quando ele não possui um texto.
+        Então é necessário zerar o tamanho da fonte ou da linha, para que não haja interferência.
+    */
 }

@@ -3,12 +3,19 @@ import './styles.css'
 
 const Board = () => {
     return (
-        <div className="board">
-            <Player player='x' />
-            <Player player='x'/>
-            <Player player='x'/>
-            <Player player='o'/>
-        </div>
+        <section className='board-container'>
+            <main className="board">
+                <Player player='x'/>
+                <Player player='x'/>
+                <Player player='x'/>
+                <Player player='o'/>
+                <Player player='x'/>
+                <Player player='x'/>
+                <Player player='x'/>
+                <Player player='o'/>
+                <Player player='o'/>
+            </main>
+        </section>
     )
 }
 
