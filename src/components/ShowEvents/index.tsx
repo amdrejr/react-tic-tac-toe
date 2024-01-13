@@ -8,7 +8,7 @@ const ShowEvents: React.FC<Props> = ({show = false}) => {
     return (
         <div className='showEvents'>
             <input type="checkbox" name="check" id="checkShow" value={show.toString()}/>
-            <label htmlFor="checkShow">Show events</label>
+            <label htmlFor="checkShow">Show Events</label>
         </div>
 
     )
