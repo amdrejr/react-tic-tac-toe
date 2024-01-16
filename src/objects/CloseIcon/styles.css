@@ -1,0 +1,30 @@
+.close-icon {
+    position: relative;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    filter: drop-shadow(1px .5px 0 rgb(0, 0, 0));
+}
+
+.close-icon::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 110%;
+    height: 5px;
+    background-color: var(--color-black-third);
+    transform: rotate(45deg);
+}
+
+.close-icon::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 110%;
+    height: 5px;    
+    background-color: var(--color-black-third);
+    transform: rotate(-45deg);
+}

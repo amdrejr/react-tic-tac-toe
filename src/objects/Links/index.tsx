@@ -2,7 +2,7 @@ import './styles.css';
 
 const Links = () => {
     return (
-        <a href="#to-do" className='action'>Links</a>
+        <a href="#" className='action'>Links</a>
     );
 }
 

@@ -1,4 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    height: 100vh;
     font-family: 'Montserrat', sans-serif;
     background-color: var(--color-black-third);
+    scroll-behavior: smooth;
 }
