@@ -1,8 +1,27 @@
+import { Link } from 'react-router-dom';
 import './styles.css';
+import HamburguerIcon from '../HamburguerIcon';
+import CloseIcon from '../CloseIcon';
 
-const Links = () => {
+interface LinksProps {
+    closeIcon?: boolean;
+    iconColor?: '--light' | '--dark';
+    toLink: string;
+}
+
+
+const Links = ({closeIcon, iconColor, toLink}:LinksProps) => {
     return (
-        <a href="#" className='action'>Links</a>
+        <>
+            <Link to={toLink} className={`action ${iconColor}`}>
+                <span className='text'>Links</span>
+                {
+                closeIcon ? 
+                    <CloseIcon iconColor={iconColor}/> : 
+                    <HamburguerIcon iconColor={iconColor} />
+                }
+            </Link>
+        </>
     );
 }
 

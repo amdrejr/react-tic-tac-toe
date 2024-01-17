@@ -1,8 +1,8 @@
 import './styles.css'
 
-const HamburguerIcon = () => {
+const HamburguerIcon = ({iconColor=''}:{iconColor?:string}) => {
     return (
-        <span className="hamburguer"></span>
+        <span className={`hamburguer ${iconColor}`}></span>
     )
 }
 

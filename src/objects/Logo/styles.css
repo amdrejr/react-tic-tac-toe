@@ -3,7 +3,7 @@
 }
 
 .logo img {
-    width: clamp(140px, 40vw, 260px);
+    width: clamp(120px, 40vw, 260px);
     image-rendering: pixelated;
     filter: drop-shadow(.4em .4em 0 rgba(0, 0, 0, .4))
             drop-shadow(.8em .8em 0 rgba(0, 0, 0, .27))

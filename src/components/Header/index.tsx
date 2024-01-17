@@ -1,15 +1,20 @@
 import './styles.css'
 
-import HamburguerIcon from "../../objects/HamburguerIcon";
-import Links from "../../objects/Links";
 import Logo from "../../objects/Logo";
+import Links from '../../objects/Links';
 
-const Header = () => {
+interface HeaderProps {
+    closeIcon?: boolean;
+    iconColor?: '--light' | '--dark';
+    toLink: string;
+}
+
+
+const Header = ({closeIcon, iconColor, toLink}:HeaderProps) => {
     return (
         <header className="header">
             <Logo />
-            <Links />
-            <HamburguerIcon />
+            <Links toLink={toLink} closeIcon={closeIcon} iconColor={iconColor}/>
         </header>
     );
 }

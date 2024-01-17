@@ -1,6 +1,5 @@
 .close-icon {
     position: relative;
-    margin: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,9 +12,9 @@
     content: '';
     display: inline-block;
     position: absolute;
-    width: 110%;
+    width: 120%;
     height: 5px;
-    background-color: var(--color-black-third);
+    background-color: var(--color-white-second);
     transform: rotate(45deg);
 }
 
@@ -23,8 +22,16 @@
     content: '';
     display: inline-block;
     position: absolute;
-    width: 110%;
+    width: 120%;
     height: 5px;    
-    background-color: var(--color-black-third);
+    background-color: var(--color-white-second);
     transform: rotate(-45deg);
 }
+
+/* .close-icon.--dark::before {
+    background-color: var(--color-white-fourth);
+}
+
+.close-icon.--dark::after {
+    background-color: var(--color-white-fourth);
+} */

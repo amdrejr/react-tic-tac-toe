@@ -2,7 +2,6 @@
     width: max-content;
     background-color: var(--color-eighth);
     padding: 20px;
-    margin: clamp(1.5rem, 4vw, 3rem) auto;
     font-size: clamp(.5rem, 3vw, 2rem);
     box-shadow: .4em .4em 0 rgba(0, 0, 128, 0.400),
                 .8em .8em 0 rgba(0, 0, 128, 0.25),

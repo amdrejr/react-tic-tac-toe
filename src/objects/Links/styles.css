@@ -1,11 +1,24 @@
 .action {
     font-family: var(--font-title);
-    margin-top: 1px;
     text-decoration: none;
     font-size: 1rem;
+    font-size: clamp(.6rem, 4vw, 1rem);
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
     color: var(--color-white-second);
     text-shadow: var(--text-shadow-small);
-  }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+}
+
+.action > .text {
+  padding-top: 2px;
+}
+
+/* .action.--dark {
+    color: var(--color-white-fourth);
+} */

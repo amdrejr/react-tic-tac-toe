@@ -1,10 +1,8 @@
-
 .showEvents {
     font-family: var(--font-title);
     font-size: var(--size-small);
     color: var(--color-white-second);
     text-shadow: var(--text-shadow-small);
-    text-align: center;
 }
 
 .showEvents input {

@@ -1,13 +1,16 @@
 import './styles.css';
 
-interface AboutProps {
-    children?: React.ReactNode;
-}
+import Header from '../../components/Header';
 
-const About = ({children}:AboutProps) => (
-    <article id='about'>
-        {children}
-    </article>
+import photo from '../../assets/imgs/photo.png';
+
+const About = () => (
+    <main className='about-main'>
+        <Header toLink='/' closeIcon={true} iconColor='--dark'/>
+        <article id='about'>
+            <img src={photo} alt="amdrejr photo" />
+        </article>
+    </main>
 )
 
 export default About;
