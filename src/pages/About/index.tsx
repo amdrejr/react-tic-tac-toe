@@ -1,14 +1,27 @@
 import './styles.css';
 
 import Header from '../../components/Header';
+import AvatarProfile from '../../objects/AvatarProfile';
+import SocialMedias from '../../objects/SocialMedias';
 
-import photo from '../../assets/imgs/photo.png';
 
 const About = () => (
     <main className='about-main'>
         <Header toLink='/' closeIcon={true} iconColor='--dark'/>
         <article id='about'>
-            <img src={photo} alt="amdrejr photo" />
+            <AvatarProfile />
+            <h2>André Jr Mello</h2>
+            <p>
+                I'm a Front-end Developer and I'm currently studying to become a Full-stack Developer.
+            </p>
+            <p>Visit the links below to see more of my work.</p>
+
+            <div className='links-box'>
+                <a className='btn-link' href='https://amdrejr-jogo-da-memoria.netlify.app/' target='__blank'>Memory Game 🃏</a>
+                <a className='btn-link' href='https://amdrejr-todo-list.netlify.app/' target='__blank'>To-do List 📝</a>
+                <a className='btn-link --principal' href="https://amdrejr.github.io/" target='__blank'>My Portfolio Website 👨‍💻</a>
+            </div>
+            <SocialMedias />
         </article>
     </main>
 )

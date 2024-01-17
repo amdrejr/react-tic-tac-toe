@@ -2,4 +2,64 @@
     background-color: var(--color-third);
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#about {
+    background-color: var(--color-fourth);
+    width: clamp(250px, 85vw, 600px);
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(15px, 6vw, 40px);
+    font-size: clamp(.5rem, 3vw, 2rem);
+    box-shadow: .4em .4em 0 rgba(128, 0, 255, 0.6),
+                .8em .8em 0 rgba(128, 0, 255, 0.4),
+                1.2em 1.2em 0 rgba(128, 0, 255, 0.2);
+    border: 3px solid var(--color-black-first);
+}
+
+#about > h2 {
+    font-family: var(--font-title);
+    font-size: clamp(.8rem, 4vw, 2rem);
+    color: var(--color-white-first);
+    text-shadow: var(--text-shadow-small)
+}
+
+#about > p {
+    font-family: var(--font-body);
+    font-size: clamp(.9rem, 4vw, 1.4rem);
+    color: var(--color-white-first);
+    text-shadow: var(--text-shadow-small)
+}
+
+.links-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.btn-link {
+    padding: 10px 0;
+    display: inline-block;
+    flex-grow: 1;
+    text-decoration: none;
+    color: var(--color-black-first);
+    font-size: clamp(13px, 3vw, 21px);
+    background-color: var(--color-second);
+    /* background-color: var(--color-sixth); */
+    border: 2px solid var(--color-black-first);
+    box-shadow: 3px 3px 0 var(--color-black-first);
+    cursor: pointer;
+}
+
+.btn-link.--principal {
+    background-color: var(--color-sixth);
+    color: var(--color-white-first);
+}
+

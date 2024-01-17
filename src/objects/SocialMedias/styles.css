@@ -1,0 +1,20 @@
+.social-medias {
+    background-color: var(--color-white-third);
+    padding: 5px 10px;
+    border: 2px solid var(--color-black-first);
+    box-shadow: 3px 3px 0 var(--color-black-first);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.social-medias > a {
+    text-decoration: none;
+    line-height: 0;
+}
+
+.social-medias img {
+    image-rendering: pixelated;
+}

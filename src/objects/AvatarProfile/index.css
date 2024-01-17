@@ -1,0 +1,44 @@
+.avatar-profile {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 0 var(--color-black-first)) 
+            drop-shadow(-2px -2px 0 var(--color-black-first))
+            drop-shadow(2px -2px 0 var(--color-black-first))
+            drop-shadow(-2px 2px 0 var(--color-black-first))
+    
+    ;
+}
+
+.avatar-profile > img {
+    width: 100%;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: var(--color-white-first);
+    border: 3px solid var(--color-white-first);
+}
+
+
+.avatar-profile::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 30%;
+    background-color: var(--color-first);
+    transform: rotate(45deg);
+}
+
+.avatar-profile::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 30%;
+    background-color: var(--color-first);
+    transform: rotate(-45deg);
+}
+
