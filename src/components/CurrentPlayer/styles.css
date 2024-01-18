@@ -1,0 +1,20 @@
+.current-player {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-white-fourth);
+    border: 2px solid var(--color-black-first);
+    box-shadow: 3px 3px 0 var(--color-black-first);
+    text-indent: 6px;
+}
+
+.current-player > figcaption {
+    font-family: var(--font-title);
+    margin: 0 5px;
+    font-size: clamp(.75rem, 4vw, 1.4rem);
+}
+
+.current-player > img {
+    width: clamp(35px, 12vw, 50px);
+    padding: 6px;
+    background-color: var(--color-black-second);
+}

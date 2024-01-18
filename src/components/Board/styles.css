@@ -1,5 +1,4 @@
 .board-container {
-    width: max-content;
     background-color: var(--color-eighth);
     padding: 20px;
     font-size: clamp(.5rem, 3vw, 2rem);
@@ -15,15 +14,28 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 2%;
-    width: clamp(220px, 80vw, 700px);
-    height: clamp(220px, 80vw, 700px);
+    width: clamp(220px, 80vw, 612px);
+    height: clamp(220px, 80vw, 612px);
     background-color: var(--color-fifth);
     background-image: linear-gradient(45deg, #ff0000 30%, #ff0080 100%);
+}
+
+.board > .player {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-eighth);
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+.board > .player:hover {
+    background-color: var(--color-seventh);
 }
 
 .board > .player > img {
     image-rendering: pixelated;
     width: 100%;
+    height: 100%;
     padding: 5%;
     background-color: var(--color-eighth);
 }

@@ -25,14 +25,14 @@
 
 #about > h2 {
     font-family: var(--font-title);
-    font-size: clamp(.8rem, 4vw, 2rem);
+    font-size: clamp(.8rem, 5vw, 2rem);
     color: var(--color-white-first);
     text-shadow: var(--text-shadow-small)
 }
 
 #about > p {
     font-family: var(--font-body);
-    font-size: clamp(.9rem, 4vw, 1.4rem);
+    font-size: clamp(.9rem, 4vw, 1.2rem);
     color: var(--color-white-first);
     text-shadow: var(--text-shadow-small)
 }
