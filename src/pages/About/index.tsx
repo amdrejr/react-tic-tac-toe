@@ -18,7 +18,7 @@ const About = () => (
 
             <div className='links-box'>
                 <a className='btn-link' href='https://amdrejr-jogo-da-memoria.netlify.app/' target='__blank'>Memory Game 🃏</a>
-                <a className='btn-link' href='https://amdrejr-todo-list.netlify.app/' target='__blank'>To-do List 📝</a>
+                <a className='btn-link' href='https://amdrejr-angular-loja.netlify.app' target='__blank'>Tech Loja 💻</a>
                 <a className='btn-link --principal' href="https://amdrejr.github.io/" target='__blank'>My Portfolio Website 👨‍💻</a>
             </div>
             <SocialMedias />

@@ -1,12 +1,13 @@
 import './styles.css';
 import gif from '../../assets/imgs/amdrejr-grafite.gif';
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
 
     return (
-        <a className="logo" href='https://github.com/amdrejr' target='__blank' title='Visit my GitHub!'>
+        <Link className="logo" to='/' >
             <img src={gif} alt="amdrejr" />
-        </a>
+        </Link>
     );
 }
 

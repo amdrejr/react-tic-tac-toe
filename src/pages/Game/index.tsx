@@ -5,21 +5,36 @@ import Header from '../../components/Header';
 import ShowEvents from '../../components/ShowEvents';
 import './styles.css';
 import Winner from '../../components/Winner';
+import EventsHistoric from '../../components/EventsHistoric';
 
 const Game = () => {
     const [casas, setCasas] = useState<('x' | 'o' | '')[]>(['', '', '', '', '', '', '', '', '']);
     const [currentPlayer, setCurrentPlayer] = useState<'x' | 'o'>('x');
-    const [winner, setWinner] = useState<'x' | 'o' | ''>('');
+    const [winner, setWinner] = useState<'x' | 'o' | '' | 'draw'>('');
+    const [events, setEvents] = useState<({casa:number, ico:'x' | 'o'})[]>([]);
+    const [showEvents, setShowEvents] = useState<boolean>(false);
+    const [turn, setTurn] = useState<number>(1);
 
     const jogada = (casaIndex: number) => {
         // atualizar o board
         const newCasas = [...casas];
         newCasas[casaIndex] = currentPlayer;
         setCasas(newCasas);
+        // add evento
+        addEvent(casaIndex);
         // atualizar o jogador
         setCurrentPlayer(currentPlayer === 'x' ? 'o' : 'x');
         // verificar se alguém ganhou
         checkWinner(newCasas);
+
+        // console.log(events);
+        // console.log(showEvents)
+        setTurn(turn + 1);
+        if (turn === 9) {
+            setWinner('draw');
+        }
+        console.log('turno: ', turn);
+
     }
 
     // 0 1 2
@@ -36,7 +51,6 @@ const Game = () => {
             case casas[0] === 'x' && casas[4] === 'x' && casas[8] === 'x':
             case casas[2] === 'x' && casas[4] === 'x' && casas[6] === 'x':
                 setWinner('x');
-                console.log('X ganhou');
                 break;
             case casas[0] === 'o' && casas[1] === 'o' && casas[2] === 'o':
             case casas[3] === 'o' && casas[4] === 'o' && casas[5] === 'o':
@@ -47,7 +61,6 @@ const Game = () => {
             case casas[0] === 'o' && casas[4] === 'o' && casas[8] === 'o':
             case casas[2] === 'o' && casas[4] === 'o' && casas[6] === 'o':
                 setWinner('o');
-                console.log('O ganhou');
                 break;
         }               
     }
@@ -56,20 +69,35 @@ const Game = () => {
         setCasas(['', '', '', '', '', '', '', '', '']);
         setCurrentPlayer('x');
         setWinner('');
+        setEvents([]);
+        setTurn(1);
     }
+
+    // const addEvent = (casa:number) => {
+    //     const newEvents = [...events];
+    //     newEvents.push({casa, ico: currentPlayer});
+    //     setEvents(newEvents);
+    // }
+
+    const addEvent = (casa: number) => {
+        setEvents(prevEvents => {
+          const newEvents = [...prevEvents, { casa, ico: currentPlayer }];
+          console.log(newEvents); // Aqui você deve ver o estado atualizado
+          return newEvents;
+        });
+    };
 
     return (
         <>
             <Header toLink='/about' />
             <main id='game'>
-                {
-                    winner ? <Winner winner={winner} resetGame={resetGame} /> :
-                    <>
-                        <CurrentPlayer player={currentPlayer} />
-                        <Board casas={casas} jogada={jogada}/>
-                    </>
-                }
-                <ShowEvents show={true} />
+                { !winner && <CurrentPlayer player={currentPlayer} />}
+                <div className='board-and-historic'>
+                    { winner && <Winner winner={winner} resetGame={resetGame} /> }
+                    { !winner && <Board casas={casas} jogada={jogada}/>}
+                    { showEvents && <EventsHistoric events={events} /> }
+                </div>
+                <ShowEvents getEvent={showEvents} setEvent={setShowEvents} />
             </main>
         </>
     )

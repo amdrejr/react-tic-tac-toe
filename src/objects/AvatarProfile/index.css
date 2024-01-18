@@ -9,9 +9,7 @@
     filter: drop-shadow(2px 2px 0 var(--color-black-first)) 
             drop-shadow(-2px -2px 0 var(--color-black-first))
             drop-shadow(2px -2px 0 var(--color-black-first))
-            drop-shadow(-2px 2px 0 var(--color-black-first))
-    
-    ;
+            drop-shadow(-2px 2px 0 var(--color-black-first));
 }
 
 .avatar-profile > img {

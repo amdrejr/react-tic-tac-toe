@@ -5,7 +5,7 @@ import circle from '../../assets/imgs/circulo.png';
 import trofeu from '../../assets/imgs/trofeu.png';
 
 interface WinnerProps {
-  winner: 'o' | 'x';
+  winner: 'o' | 'x' | 'draw';
   resetGame: () => void;
 }
 
@@ -19,9 +19,26 @@ const Winner = ({winner, resetGame} : WinnerProps) => {
     } 
 
     return <section className='winner'>
-        <img className='trofeu' src={trofeu} alt="troféu" />
-        <p>The winner is:</p>
-        <img className='img-winner' src={actualWinner} alt={`Winner is ${winner}`} />
+        {
+            winner !== 'draw' ? 
+            <>
+                <img className='trofeu' src={trofeu} alt="troféu" />
+                <p>The winner is:</p>
+                <img className='img-winner' src={actualWinner} alt={`Winner is ${winner}`} />
+            </>
+            :
+            <>
+                <p className='draw'>Draw!</p>
+                <span className='text-winner'>No winners..</span>
+                <div className="draw-img-box">
+                    <img src={cross} alt="cross" />
+                    <img src={circle} alt="circle" />
+                </div>
+
+            </>
+
+
+        }
         <button onClick={resetGame}>Reset Game</button>
     </section>
 }

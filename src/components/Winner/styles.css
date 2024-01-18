@@ -42,4 +42,28 @@
     text-shadow: var(--text-shadow-small);
     border: 2px solid var(--color-black-first);
     box-shadow: 3px 3px 0 var(--color-black-first);
+    cursor: pointer;
+}
+
+
+p.draw {
+    font-size: clamp(2rem, 10vw, 4rem);
+}
+
+span.text-winner {
+    font-size: clamp(1rem, 5vw, 2rem);
+    font-family: var(--font-body);
+    color: white;
+    text-shadow: var(--text-shadow-small);
+}
+
+.draw-img-box {
+    width: 100%;
+    text-align: center;
+}
+
+.draw-img-box > img {
+    image-rendering: pixelated;
+    width: 31%;
+    margin: 5px;
 }

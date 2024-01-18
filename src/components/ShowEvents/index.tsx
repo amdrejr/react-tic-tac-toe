@@ -1,13 +1,18 @@
 import './styles.css';
 
 interface Props {
-    show: boolean;
+    getEvent: boolean;
+    setEvent: (v:boolean) => void;
 }
 
-const ShowEvents: React.FC<Props> = ({show = false}) => {
+const ShowEvents: React.FC<Props> = ({getEvent, setEvent}) => {
+    const handleShowEvents = () => {
+        setEvent(!getEvent);
+    }
+
     return (
         <div className='showEvents'>
-            <input type="checkbox" name="check" id="checkShow" value={show.toString()}/>
+            <input onClick={handleShowEvents} type="checkbox" name="check" id="checkShow" value={getEvent.toString()}/>
             <label htmlFor="checkShow">Show Events</label>
         </div>
 

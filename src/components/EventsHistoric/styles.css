@@ -1,0 +1,32 @@
+.events-historic {
+    width: 262px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(--font-body);
+    color: var(--color-white-first);
+    font-size: 1rem;
+}
+
+.events-historic > h3 {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    color: var(--color-white-second);
+    text-shadow: var(--text-shadow-small);
+}
+
+.events-historic .event {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--color-black-second);
+    border: 2px solid var(--color-black-first);
+    box-shadow: 2px 2px 0 var(--color-black-first);
+}
+
+.events-historic > .event > img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: var(--color-white-fourth);;
+}

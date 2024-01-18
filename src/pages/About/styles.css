@@ -60,5 +60,6 @@
 .btn-link.--principal {
     background-color: var(--color-sixth);
     color: var(--color-white-first);
+    text-shadow: var(--text-shadow-small);
 }
 

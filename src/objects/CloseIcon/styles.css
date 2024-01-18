@@ -27,11 +27,3 @@
     background-color: var(--color-white-second);
     transform: rotate(-45deg);
 }
-
-/* .close-icon.--dark::before {
-    background-color: var(--color-white-fourth);
-}
-
-.close-icon.--dark::after {
-    background-color: var(--color-white-fourth);
-} */

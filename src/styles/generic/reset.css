@@ -1,7 +1,5 @@
 @import "normalize.css";
 
-
-
 *::selection {
     background-color: var(--color-sixth);
     color: var(--color-white-first);
