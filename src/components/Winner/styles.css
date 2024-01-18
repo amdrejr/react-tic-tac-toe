@@ -1,0 +1,45 @@
+.winner {
+    background-color: var(--color-seventh);
+    padding: clamp(10px, 5vw, 32px);
+    font-size: clamp(.5rem, 3vw, 2rem);
+    box-shadow: .4em .4em 0 rgb(0, 0, 255, .4),
+                .8em .8em 0 rgba(0, 0, 255, .25),
+                1.2em 1.2em 0 rgba(0, 0, 255, .125);
+    border: 3px solid var(--color-black-first);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.winner > img.trofeu {
+    width: 50%;
+    image-rendering: pixelated;
+}
+
+.winner > p {
+    font-family: var(--font-title);
+    display: flex;
+    font-size: clamp(1rem, 5vw, 2rem);
+    color: white;
+    text-shadow: var(--text-shadow-small);
+}
+
+.winner > .img-winner {
+    width: 29%;
+    background-color: var(--color-third);
+    padding: 10px;
+    border: 5px solid var(--color-black-first);
+    image-rendering: pixelated;
+
+}
+
+.winner > button {
+    padding: 10px 30px;
+    font-size: clamp(1rem, 5vw, 1.7rem);
+    background-color: var(--color-fifth);
+    color: var(--color-white-first);
+    text-shadow: var(--text-shadow-small);
+    border: 2px solid var(--color-black-first);
+    box-shadow: 3px 3px 0 var(--color-black-first);
+}

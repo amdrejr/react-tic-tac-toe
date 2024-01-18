@@ -52,7 +52,6 @@
     color: var(--color-black-first);
     font-size: clamp(13px, 3vw, 21px);
     background-color: var(--color-second);
-    /* background-color: var(--color-sixth); */
     border: 2px solid var(--color-black-first);
     box-shadow: 3px 3px 0 var(--color-black-first);
     cursor: pointer;
