@@ -12,8 +12,8 @@ const EventsHistoric = ({events}:EventsHistoricProps) => (
     <article className='events-historic'>
         <h3>Events Historic</h3>
         {
-            events.map((v) => (
-                <div className='event'>
+            events.map((v,i) => (
+                <div className='event' key={'event-'+i}>
                     {v.ico === 'x' ? <img src={cross} alt="X" /> : <img src={circle} alt="O" />}
                     <p>Added in the {v.casa+1}rd place</p>
                 </div>

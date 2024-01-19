@@ -28,7 +28,7 @@
     transition: all .2s linear;
 }
 
-.board > .player:hover {
+.board > .player.on-game:hover {
     background-color: var(--color-seventh);
 }
 

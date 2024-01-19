@@ -8,3 +8,7 @@
         Então é necessário zerar o tamanho da fonte ou da linha, para que não haja interferência.
     */
 }
+
+.board > .player.casa-winner > img {
+    background-color: var(--color-seventh);
+}

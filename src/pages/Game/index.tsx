@@ -14,78 +14,74 @@ const Game = () => {
     const [events, setEvents] = useState<({casa:number, ico:'x' | 'o'})[]>([]);
     const [showEvents, setShowEvents] = useState<boolean>(false);
     const [turn, setTurn] = useState<number>(1);
+    const [casasWinner, setCasasWinner] = useState<number[]>([]);
 
     const jogada = (casaIndex: number) => {
+        // add evento
+        addEvent(casaIndex);
+
         // atualizar o board
         const newCasas = [...casas];
         newCasas[casaIndex] = currentPlayer;
         setCasas(newCasas);
-        // add evento
-        addEvent(casaIndex);
+        
         // atualizar o jogador
         setCurrentPlayer(currentPlayer === 'x' ? 'o' : 'x');
+        
         // verificar se alguém ganhou
         checkWinner(newCasas);
-
-        // console.log(events);
-        // console.log(showEvents)
+        
+        // atualizar o turno
         setTurn(turn + 1);
         if (turn === 9) {
-            setWinner('draw');
+            endGame('draw');
         }
-        console.log('turno: ', turn);
-
     }
 
-    // 0 1 2
-    // 3 4 5
-    // 6 7 8
     const checkWinner = (casas:('x' | 'o' | '')[]) => {
-        switch (true) {
-            case casas[0] === 'x' && casas[1] === 'x' && casas[2] === 'x':
-            case casas[3] === 'x' && casas[4] === 'x' && casas[5] === 'x':
-            case casas[6] === 'x' && casas[7] === 'x' && casas[8] === 'x':
-            case casas[0] === 'x' && casas[3] === 'x' && casas[6] === 'x':
-            case casas[1] === 'x' && casas[4] === 'x' && casas[7] === 'x':
-            case casas[2] === 'x' && casas[5] === 'x' && casas[8] === 'x':
-            case casas[0] === 'x' && casas[4] === 'x' && casas[8] === 'x':
-            case casas[2] === 'x' && casas[4] === 'x' && casas[6] === 'x':
-                setWinner('x');
-                break;
-            case casas[0] === 'o' && casas[1] === 'o' && casas[2] === 'o':
-            case casas[3] === 'o' && casas[4] === 'o' && casas[5] === 'o':
-            case casas[6] === 'o' && casas[7] === 'o' && casas[8] === 'o':
-            case casas[0] === 'o' && casas[3] === 'o' && casas[6] === 'o':
-            case casas[1] === 'o' && casas[4] === 'o' && casas[7] === 'o':
-            case casas[2] === 'o' && casas[5] === 'o' && casas[8] === 'o':
-            case casas[0] === 'o' && casas[4] === 'o' && casas[8] === 'o':
-            case casas[2] === 'o' && casas[4] === 'o' && casas[6] === 'o':
-                setWinner('o');
-                break;
-        }               
+        // 0 1 2
+        // 3 4 5
+        // 6 7 8
+        const winConditions: number[][] = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],    // linhas
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],    // colunas
+            [0, 4, 8], [2, 4, 6]                // diagonais
+        ];
+
+          for(const condition of winConditions) {
+            // a,b,c será respectivamente as casas 0,1,2... 3,4,5... 6,7,8... etc...
+            const [a, b, c] = condition;
+            if (casas[a] === 'x' && casas[b] === 'x' && casas[c] === 'x') {
+                endGame('x', condition);
+                return;
+            } else if (casas[a] === 'o' && casas[b] === 'o' && casas[c] === 'o') {
+                endGame('o', condition);
+                return;
+            }
+        }
+    }
+
+    const endGame = (winner:'o'|'x'|'draw', casas:number[]=[]) => {      
+        setCasasWinner(casas);
+        setTimeout(() => {
+            setWinner(winner);
+        }, 2000);
     }
 
     const resetGame = () => {
         setCasas(['', '', '', '', '', '', '', '', '']);
         setCurrentPlayer('x');
+        setCasasWinner([]);
         setWinner('');
         setEvents([]);
         setTurn(1);
     }
 
-    // const addEvent = (casa:number) => {
-    //     const newEvents = [...events];
-    //     newEvents.push({casa, ico: currentPlayer});
-    //     setEvents(newEvents);
-    // }
-
-    const addEvent = (casa: number) => {
-        setEvents(prevEvents => {
-          const newEvents = [...prevEvents, { casa, ico: currentPlayer }];
-          console.log(newEvents); // Aqui você deve ver o estado atualizado
-          return newEvents;
-        });
-    };
+    const addEvent = (casa:number) => {
+        const newEvents = [...events];
+        newEvents.push({casa, ico: currentPlayer});
+        setEvents(newEvents);
+    }
 
     return (
         <>
@@ -94,7 +90,7 @@ const Game = () => {
                 { !winner && <CurrentPlayer player={currentPlayer} />}
                 <div className='board-and-historic'>
                     { winner && <Winner winner={winner} resetGame={resetGame} /> }
-                    { !winner && <Board casas={casas} jogada={jogada}/>}
+                    { !winner && <Board casas={casas} jogada={jogada} casasWinner={casasWinner}/>}
                     { showEvents && <EventsHistoric events={events} /> }
                 </div>
                 <ShowEvents getEvent={showEvents} setEvent={setShowEvents} />
